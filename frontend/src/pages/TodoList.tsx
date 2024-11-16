@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import FormContainer from "../components/FormContainer";
-import Button from "../components/Button";
-import TextInput from "../components/TextInput";
-import ErrorMessage from "../components/ErrorMessage";
+import FormContainer from "../components/layout/FormContainer";
+import Button from "../components/ui-elements/Button";
+import TextInput from "../components/ui-elements/TextInput";
+import ErrorMessage from "../components/ui-elements/ErrorMessage";
 import axios from "axios";
 import { BACKEND_URL } from "../utils/api";
 
 const TodoList = () => {
   const [todos, setTodos] = useState<{ id: number; name: string }[]>([]);
   const [todo, setTodo] = useState("");
-  const [errors, setErrors] = useState<{
-    message: string;
+  const [message, setMessage] = useState<{
+    text: string;
     type: "success" | "error";
   } | null>(null);
 
@@ -18,11 +18,11 @@ const TodoList = () => {
     try {
       const response = await axios.get(`${BACKEND_URL}/api/todos`);
       setTodos(response.data);
-      setErrors(null);
+      setMessage(null);
     } catch (error) {
       console.error("Error fetching todos:", error);
-      setErrors({
-        message: "Failed to fetch todos. Please try again.",
+      setMessage({
+        text: "Failed to fetch todos. Please try again.",
         type: "error",
       });
     }
@@ -41,11 +41,11 @@ const TodoList = () => {
       });
       setTodos([...todos, response.data]);
       setTodo("");
-      setErrors({ message: "Todo added successfully!", type: "success" });
+      setMessage({ text: "Todo added successfully!", type: "success" });
     } catch (error) {
       console.error("Error adding todo:", error);
-      setErrors({
-        message: "Failed to add todo. Please try again.",
+      setMessage({
+        text: "Failed to add todo. Please try again.",
         type: "error",
       });
     }
@@ -54,7 +54,7 @@ const TodoList = () => {
   return (
     <FormContainer>
       <form onSubmit={handleAddTodo}>
-        {errors && <ErrorMessage message={errors.message} type={errors.type}/>}
+        {message && <ErrorMessage message={message.text} type={message.type}/>}
         <div className="flex items-start gap-2">
           <TextInput
             id="todo-input"
