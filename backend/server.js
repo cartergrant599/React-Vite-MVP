@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const todoRoutes = require("./routes/todoRoutes");
-const contactRoutes = require("./routes/contactRoutes");
+const todoRoutes = require("./routes/todo");
+const contactRoutes = require("./routes/contact");
 
 const app = express();
 app.use(cors());
