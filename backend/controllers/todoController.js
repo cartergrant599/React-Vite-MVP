@@ -1,8 +1,4 @@
-const todos = [
-    { id: 1, name: "Learn React" },
-    { id: 2, name: "Build a Todo App" },
-    { id: 3, name: "Explore Node.js" },
-];
+const todos = require('../data.json');
 
 exports.getTodos = (req, res) => {
     res.json(todos);
