@@ -33,12 +33,12 @@ The backend of this application is built using Node.js and Express. It provides 
 
 ### Installation
 
-1. **Navigate to the backend directory**:
+**Navigate to the backend directory**:
    ```bash
    cd backend
    ```
 
-2. **Install dependencies**:
+**Install dependencies**:
    ```bash
    npm install
    ```
@@ -119,37 +119,37 @@ This will start the server using Nodemon, which automatically restarts the serve
 
 To run the project locally, follow these steps:
 
-1. **Clone the repository**:
+**Clone the repository**:
    ```bash
    git clone <repository-url>
    cd <repository-name>
    ```
 
-2. **Install frontend dependencies**:
+**Install frontend dependencies**:
    ```bash
    cd frontend
    npm install
    ```
 
-3. **Install backend dependencies**:
+**Install backend dependencies**:
    ```bash
    cd backend
    npm install
    ```
 
-4. **Open a new terminal, navigate to the frontend directory, and start the development server**:
+**Open a new terminal, navigate to the frontend directory, and start the development server**:
    ```bash
    cd frontend
    npm run dev
    ```
 
-5. **Start the backend server**:
+**Start the backend server**:
    ```bash
    cd backend
    npm run dev
    ```
 
-6. **Open your browser** and navigate to `http://localhost:5173` (or the port specified in your terminal).
+**Open your browser** and navigate to `http://localhost:5173` (or the port specified in your terminal).
 
 ## Coding Guidelines
 
